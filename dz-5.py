@@ -90,7 +90,7 @@ cheese_ingredient = Ingredient(cheese_product, 100)
 # Из ингредиентов создаем пиццу
 pizza_margarita = Pizza('Маргарита', [dough_ingredient, tomato_ingredient, cheese_ingredient])
 
-# Выводим экземпляр пиццы
+# Выводим ингредиенты пиццы с указанием калорийности и себестоимости каждого
 pizza_calorific = 0
 pizza_cost = 0
 print(f'Состав пиццы "{pizza_margarita.name}":')
@@ -98,7 +98,8 @@ for each in pizza_margarita.ingredient:
     ingredient_calorific = each.get_calorific()
     ingredient_cost = each.get_cost()
     print(f'{each.product.name} ({ingredient_calorific} Ккал)  -  {ingredient_cost} руб.')
-    pizza_calorific +=ingredient_calorific
-    pizza_cost +=ingredient_cost
+    pizza_calorific +=ingredient_calorific # счётчик общей калорийности
+    pizza_cost +=ingredient_cost # счётчик общей себестоимости
 print('-----------------------------------------')
+# Выводим экземпляр пиццы
 print(f'{pizza_margarita.name} ({pizza_calorific} Ккал)  -  {pizza_cost} руб.')
